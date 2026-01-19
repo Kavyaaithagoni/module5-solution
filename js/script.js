@@ -340,6 +340,15 @@ function insertItemPrice(html,
   html = insertProperty(html, pricePropName, priceValue);
   return html;
 }
+  
+  dc.loadHomeHtml = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    allCategoriesUrl,
+    buildAndShowHomeHTML,
+    true);
+};
+
 
 
 // Appends portion name in parens if it exists
